@@ -20,11 +20,11 @@ Here is how long each solution runs with my input. All solutions are measured
 
 |                                                | part A                              | part B                              |
 |:-----------------------------------------------|:------------------------------------|:------------------------------------|
-| [day 1](https://adventofcode.com/2024/day/1)   | [` 0.042 ms`](./day01a/src/main.rs) | [` 0.061 ms`](./day01b/src/main.rs) |
+| [day 1](https://adventofcode.com/2024/day/1)   | [` 0.021 ms`](./day01a/src/main.rs) | [` 0.022 ms`](./day01b/src/main.rs) |
 
 |              | one-by-one (1 CPU core)                  | parallel                                     |
 |:-------------|:-----------------------------------------|:---------------------------------------------|
-| _everything_ | [` 0.00 ms`](./runner/src/bin/runner.rs) | [` 0.00 ms`](./runner/src/bin/runner-par.rs) |
+| _everything_ | [` 0.04 ms`](./runner/src/bin/runner.rs) | [` 0.02 ms`](./runner/src/bin/runner-par.rs) |
 
 ## Run solutions
 

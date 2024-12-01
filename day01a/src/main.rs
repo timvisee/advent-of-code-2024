@@ -1,23 +1,20 @@
 pub fn main() {
-    let mut a: Vec<usize> = Vec::new();
-    let mut b: Vec<usize> = Vec::new();
+    let (mut a, mut b) = (Vec::with_capacity(1000), Vec::with_capacity(1000));
+    let num_len = include_bytes!("../input.txt")
+        .iter()
+        .position(|&b| b == b' ')
+        .unwrap();
 
-    include_str!("../input.txt")
-        .lines()
-        .map(|line| line.split_once("   ").unwrap())
-        .for_each(|(left, right)| {
-            a.push(left.parse().unwrap());
-            b.push(right.parse().unwrap());
-        });
+    for line in include_bytes!("../input.txt").split(|&b| b == b'\n') {
+        a.push(atoi::atoi::<usize>(&line[0..num_len]).unwrap());
+        b.push(atoi::atoi::<usize>(&line[num_len + 3..]).unwrap());
+    }
 
     a.sort_unstable();
     b.sort_unstable();
 
-    let sum = a
-        .into_iter()
-        .zip(b.into_iter())
-        .map(|(a, b)| a.abs_diff(b))
-        .sum::<usize>();
-
-    println!("{sum}");
+    println!(
+        "{}",
+        a.iter().zip(b).map(|(a, b)| a.abs_diff(b)).sum::<usize>(),
+    );
 }
