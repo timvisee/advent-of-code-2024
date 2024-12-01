@@ -1,0 +1,6 @@
+.*.sw[po]
+target/
+**/*.rs.bk
+.idea/
+
+**/input.txt
