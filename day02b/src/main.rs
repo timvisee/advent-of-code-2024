@@ -10,10 +10,10 @@ pub fn main() {
                     .split(|&b| b == b' ')
                     .map(|n| atoi::atoi::<isize>(n).unwrap())
                     .collect::<Vec<_>>();
-                (0..=nums.len()).any(|i| {
+                (0..nums.len()).any(|i| {
                     nums[0..i]
                         .iter()
-                        .chain(&nums[nums.len().min(i + 1)..])
+                        .chain(&nums[i + 1..])
                         .tuple_windows()
                         .try_fold(0, |ord, (a, b)| {
                             if ord >= 0 && (1..=3).contains(&(b - a)) {
