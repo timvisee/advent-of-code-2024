@@ -15,10 +15,10 @@ pub fn main() {
                         .iter()
                         .chain(&nums[nums.len().min(i + 1)..])
                         .tuple_windows()
-                        .try_fold(0, |acc, (a, b)| {
-                            if acc >= 0 && (1..=3).contains(&(b - a)) {
+                        .try_fold(0, |ord, (a, b)| {
+                            if ord >= 0 && (1..=3).contains(&(b - a)) {
                                 Ok(1)
-                            } else if acc <= 0 && (1..=3).contains(&(a - b)) {
+                            } else if ord <= 0 && (1..=3).contains(&(a - b)) {
                                 Ok(-1)
                             } else {
                                 Err(())
