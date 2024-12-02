@@ -11,9 +11,9 @@ pub fn main() {
                     .tuple_windows()
                     .try_fold(0, |acc, (a, b)| {
                         if acc >= 0 && (1..=3).contains(&(b - a)) {
-                            Ok(acc + 1)
+                            Ok(1)
                         } else if acc <= 0 && (1..=3).contains(&(a - b)) {
-                            Ok(acc - 1)
+                            Ok(-1)
                         } else {
                             Err(())
                         }
