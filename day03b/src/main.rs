@@ -1,7 +1,7 @@
 use regex::bytes::Regex;
 
 pub fn main() {
-    let re = Regex::new(r"(mul\((\d+),(\d+)\)|do\(\)|don't\(\))").unwrap();
+    let re = Regex::new(r"(mul\(([0-9]+),([0-9]+)\)|do\(\)|don't\(\))").unwrap();
     let mut enabled = true;
 
     println!(
