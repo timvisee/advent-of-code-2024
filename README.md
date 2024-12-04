@@ -23,11 +23,11 @@ Here is how long each solution runs with my input. All solutions are measured
 | [day 1](https://adventofcode.com/2024/day/1)   | [` 0.021 ms`](./day01a/src/main.rs) | [` 0.022 ms`](./day01b/src/main.rs) |
 | [day 2](https://adventofcode.com/2024/day/2)   | [` 0.034 ms`](./day02a/src/main.rs) | [` 0.073 ms`](./day02b/src/main.rs) |
 | [day 3](https://adventofcode.com/2024/day/3)   | [` 0.166 ms`](./day03a/src/main.rs) | [` 0.257 ms`](./day03b/src/main.rs) |
-| [day 4](https://adventofcode.com/2024/day/4)   | [` 0.148 ms`](./day04a/src/main.rs) | [` 0.104 ms`](./day04b/src/main.rs) |
+| [day 4](https://adventofcode.com/2024/day/4)   | [` 0.148 ms`](./day04a/src/main.rs) | [` 0.026 ms`](./day04b/src/main.rs) |
 
 |              | one-by-one (1 CPU core)                  | parallel                                     |
 |:-------------|:-----------------------------------------|:---------------------------------------------|
-| _everything_ | [` 0.85 ms`](./runner/src/bin/runner.rs) | [` 0.26 ms`](./runner/src/bin/runner-par.rs) |
+| _everything_ | [` 0.78 ms`](./runner/src/bin/runner.rs) | [` 0.26 ms`](./runner/src/bin/runner-par.rs) |
 
 ## Run solutions
 
