@@ -1,4 +1,5 @@
 use ahash::AHashMap;
+use std::cmp::Ordering;
 
 pub fn main() {
     let data = include_bytes!("../input.txt");
@@ -27,22 +28,31 @@ pub fn main() {
                     .map(|page| atoi::atoi::<usize>(page).unwrap())
                     .collect::<Vec<_>>()
             })
-            .filter_map(|mut pages| {
-                'outer: for attempt in 0.. {
-                    for (i, page) in pages.iter().enumerate() {
-                        if let Some(orders) = orders.get(page) {
-                            if let Some(j) = pages[0..i]
-                                .iter()
-                                .position(|page| orders.binary_search(page).is_ok())
-                            {
-                                pages.swap(i, j);
-                                continue 'outer;
-                            }
+            .filter(|pages| {
+                for (i, page) in pages.iter().enumerate() {
+                    if let Some(orders) = orders.get(page) {
+                        if pages[0..i]
+                            .iter()
+                            .any(|&page| orders.binary_search(&page).is_ok())
+                        {
+                            return true;
                         }
                     }
-                    return (attempt > 0).then_some(pages[pages.len() / 2]);
                 }
-                None
+                false
+            })
+            .map(|mut pages| {
+                pages.sort_unstable_by(|a, b| {
+                    if orders
+                        .get(a)
+                        .is_some_and(|orders| orders.binary_search(&b).is_ok())
+                    {
+                        Ordering::Less
+                    } else {
+                        Ordering::Greater
+                    }
+                });
+                pages[pages.len() / 2]
             })
             .sum::<usize>(),
     );
