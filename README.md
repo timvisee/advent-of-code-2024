@@ -24,7 +24,7 @@ Here is how long each solution runs with my input. All solutions are measured
 | [day 2](https://adventofcode.com/2024/day/2)   | [` 0.034 ms`](./day02a/src/main.rs) | [` 0.073 ms`](./day02b/src/main.rs) |
 | [day 3](https://adventofcode.com/2024/day/3)   | [` 0.118 ms`](./day03a/src/main.rs) | [` 0.206 ms`](./day03b/src/main.rs) |
 | [day 4](https://adventofcode.com/2024/day/4)   | [` 0.148 ms`](./day04a/src/main.rs) | [` 0.026 ms`](./day04b/src/main.rs) |
-| [day 5](https://adventofcode.com/2024/day/5)   | [` 0.089 ms`](./day05a/src/main.rs) | [` 0.235 ms`](./day05b/src/main.rs) |
+| [day 5](https://adventofcode.com/2024/day/5)   | [` 0.089 ms`](./day05a/src/main.rs) | [` 2.34  ms`](./day05b/src/main.rs) |
 
 |              | one-by-one (1 CPU core)                  | parallel                                     |
 |:-------------|:-----------------------------------------|:---------------------------------------------|
